@@ -6,8 +6,8 @@
     "coinUnits": 100,
     "coinDecimalPlaces": 2,
     "coinDifficultyTarget": 30,
-	"blockchainExplorer": "http://http://dyngecoin.com/explorer//block#{id}",
-	"transactionExplorer": "http://http://dyngecoin.com/explorer//tx#{id}",
+	"blockchainExplorer": "http://dyngecoin.com/explorer/?hash={id}#blockchain_block",
+	"transactionExplorer": "http://dyngecoin.com/explorer/?hash={id}#blockchain_transaction",
 
 	"daemonType": "bytecoin",
 	"cnAlgorithm": "cryptonight",
