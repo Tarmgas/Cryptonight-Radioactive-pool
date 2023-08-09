@@ -1,5 +1,6 @@
 # Cryptonight-Radioactive-pool
 Working cryptonight mining pool 6122022
+*Modified a bit to work with Dyngecoin.
 
 Usage
 ===
