@@ -1,18 +1,18 @@
 {
-	"poolHost": "127.0.0.1",
+    "poolHost": "your website",
 
-	"coin": "Infinium",
-	"symbol": "INF",
-	"coinUnits": 1000000000000,
-	"coinDecimalPlaces": 12,
-	"coinDifficultyTarget": 90,
-	"blockchainExplorer": "https://explorer.infinium.space/block#{id}",
-	"transactionExplorer": "https://explorer.infinium.space/tx#{id}",
+    "coin": "dyngecoin",
+    "symbol": "DYNGE",
+    "coinUnits": 100,
+    "coinDecimalPlaces": 2,
+    "coinDifficultyTarget": 30,
+	"blockchainExplorer": "http://http://dyngecoin.com/explorer//block#{id}",
+	"transactionExplorer": "http://http://dyngecoin.com/explorer//tx#{id}",
 
 	"daemonType": "bytecoin",
 	"cnAlgorithm": "cryptonight",
 	"cnVariant": 0,
-	"cnBlobType": 0,
+	"cnBlobType": 2,
 
 	"logging": {
 		"files": {
@@ -28,40 +28,40 @@
 	"childPools": [],
 	"poolServer": {
 		"enabled": true,
-		"mergedMining": true,
+		"mergedMining": false,
 		"clusterForks": 1,
-		"poolAddress": "inf8d8xiyk33M1ULQ2nwSEdx7YqvpmuRGdeQRtPH2oDH42QzDCAgJnqGgwJFNMSefe8j8Pbumqbda9qxp97JCH7i8j1WgbASkx",
-		"intAddressPrefix": "88386169",
-		"subAddressPrefix": "1288825",
-		"blockRefreshInterval": 800,
+		"poolAddress": "poolwalletaddress",
+		"intAddressPrefix": null,
+		"subAddressPrefix": null,
+		"blockRefreshInterval": 1000,
 		"minerTimeout": 900,
 		"sslCert": "cert.pem",
 		"sslKey": "privkey.pem",
 		"sslCA": "chain.pem",
 		"ports": [
 			{
-				"port": 1444,
+				"port": 7781,
 				"difficulty": 5000,
 				"desc": "Low end hardware"
             },
 			{
-				"port": 2444,
+				"port": 7782,
 				"difficulty": 50000,
 				"desc": "Mid range hardware"
             },
 			{
-				"port": 3444,
+				"port": 7783,
 				"difficulty": 500000,
 				"desc": "High end hardware"
             }
         ],
-		"varDiff": {
-			"minDiff": 500,
-			"maxDiff": 100000000,
-			"targetTime": 45,
-			"retargetTime": 40,
-			"variancePercent": 30,
-			"maxJump": 60
+        "varDiff": {
+            "minDiff": 100,
+            "maxDiff": 100000000,
+            "targetTime": 30,
+            "retargetTime": 60,
+            "variancePercent": 30,
+            "maxJump": 100
 		},
 		"paymentId": {
 			"addressSeparator": "+"
@@ -93,26 +93,26 @@
 
 	"payments": {
         "enabled": true,
-        "interval": 2400,
+        "interval": 60,
         "maxAddresses": 5,
-        "mixin": 0,
+        "mixin": 3,
         "priority": 0,
-        "transferFee": 10000000000,
+        "transferFee": 20,
         "dynamicTransferFee": false,
         "minerPayFee": true,
-        "minPayment": 50000000000000,
-        "maxPayment": 4000000000000000,
-        "maxTransactionAmount": 4000000000000000,
-        "denomination": 1000000000000
+        "minPayment": 1000,
+        "maxPayment": 10000000,
+        "maxTransactionAmount": 10000000,
+        "denomination": 100
     },
     "blockUnlocker": {
         "enabled": true,
         "interval": 30,
-        "depth": 65,
-        "poolFee": 0.1,
-        "devDonation": 0.9,
+        "depth": 10,
+        "poolFee": 1.0,
+        "devDonation": 0.0,
         "networkFee": 0,
-	    "fixBlockHeightRPC": true
+	    "fixBlockHeightRPC": false
     },
 
 	"api": {
@@ -120,10 +120,10 @@
 		"hashrateWindow": 600,
 		"updateInterval": 60,
 		"bindIp": "0.0.0.0",
-		"port": 8217,
+		"port": 8117,
 		"blocks": 30,
 		"payments": 30,
-		"password": "password",
+		"password": "PASSWORD",
 		"ssl": false,
 		"sslPort": 8119,
 		"sslCert": "cert.pem",
@@ -133,20 +133,20 @@
 	},
 
 	"daemon": {
-        "host": "192.168.1.39",
-        "port": 27855
+        "host": "127.0.0.1",
+        "port": 7771
     },
 
     "wallet": {
         "host": "127.0.0.1",
-        "port": 27856
+        "port": 7772
     },
 
 	"redis": {
 		"host": "127.0.0.1",
-		"port": 6979,
+		"port": 6379,
 		"auth": null,
-		"db": 2,
+		"db": 0,
 		"cleanupInterval": 5
 	},
 
@@ -183,30 +183,8 @@
 		}
 	},
 
-	"email": {
-		"enabled": false,
-		"fromAddress": "your@email.com",
-		"transport": "sendmail",
-		"sendmail": {
-			"path": "/usr/sbin/sendmail"
-		},
-		"smtp": {
-			"host": "smtp.example.com",
-			"port": 587,
-			"secure": false,
-			"auth": {
-				"user": "username",
-				"pass": "password"
-			},
-			"tls": {
-				"rejectUnauthorized": false
-			}
-		},
-		"mailgun": {
-			"key": "your-private-key",
-			"domain": "mg.yourdomain"
-		}
-	},
+	
+	
 
 	"telegram": {
 		"enabled": false,
@@ -225,14 +203,14 @@
 		}
 	},
 
-	"monitoring": {
-		"daemon": {
-			"checkInterval": 60,
-			"rpcMethod": "get_status"
-		},
-		"wallet": {
-			"checkInterval": 60,
-			"rpcMethod": "get_balance"
+	 "monitoring": {
+        "daemon": {
+            "checkInterval": 60,
+            "rpcMethod": "getblockcount"
+        },
+        "wallet": {
+            "checkInterval": 60,
+            "rpcMethod": "getbalance"
 		}
 	},
 
